@@ -4,7 +4,23 @@ const menu = {
   Size: ["small", "medium", "large"],
 };
 
-let order = (Flavor_name, call_production) => {
+let is_shop_open = true;
+
+let order = (time, work) => {
+  return new Promise((resolve, reject) => {
+    if (is_shop_open === true) {
+      setTimeout(() => {
+        resolve(work());
+      }, time);
+    } else {
+      reject(console.log("Shop is closed"));
+    }
+  });
+};
+
+order(2000, () => console.log(`Flavor ${menu.Flavor[0]} was selected`));
+
+/* let order = (Flavor_name, call_production) => {
   setTimeout(() => {
     console.log(`Flavor ${menu.Flavor[Flavor_name]} was selected`);
     call_production();
@@ -43,4 +59,4 @@ let production = () => {
   }, 1000);
 };
 
-order(0, production);
+order(0, production); */
