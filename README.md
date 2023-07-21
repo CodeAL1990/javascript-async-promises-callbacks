@@ -15,3 +15,8 @@ For the code inside the arrow function, cut and paste the resolve call
 After this order arrow function, call order and pass in a value(remember it's in milliseconds) for time reference, and for work reference, use the arrow function and console log a flavor array item of your choice from menu object(author used stocks i use menu)
 You should get a logged message on console for your chosen flavor, which will appear according to the value you inputted for your time reference
 \*\* The purpose of the above is to show you the relationship between the time and work references(work will represent all the steps you will do to reach final product)
+For all the steps till your final product, instead of the multitude of callbacks you did in your removed/commented code, we will now employ the use of .then(promises chaining)
+To do this, you will use call then on your order call for each step you need to reach final product
+Inside each subsequent then call, you will use an arrow function and return the order call for the next step you have determined when you did the callback version
+Check out the full scope of the code for your callback version and the promise chaining version, one should be more readable then the other(albeit longer)
+\*\* Personally, the advantage i can see for promise chaining is that you are less likely to make mistakes compared to callback chaining

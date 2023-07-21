@@ -18,7 +18,42 @@ let order = (time, work) => {
   });
 };
 
-order(2000, () => console.log(`Flavor ${menu.Flavor[0]} was selected`));
+order(2000, () => console.log(`Flavor ${menu.Flavor[0]} was selected`))
+  .then(() => {
+    return order(1000, () => console.log(`Production has started`));
+  })
+
+  .then(() => {
+    return order(1000, () => console.log(`Selected flavor being prepared`));
+  })
+
+  .then(() => {
+    return order(2000, () => console.log(`Checking for anomalies`));
+  })
+
+  .then(() => {
+    return order(3000, () =>
+      console.log(`All prepartions done, waiting for container choice`)
+    );
+  })
+
+  .then(() => {
+    return order(1000, () =>
+      console.log(
+        `Container ${menu.Holder[0]} was selected, waiting for size choice`
+      )
+    );
+  })
+
+  .then(() => {
+    return order(3000, () =>
+      console.log(`Size ${menu.Size[1]} was selected, adding finishing touches`)
+    );
+  })
+
+  .then(() => {
+    return order(1000, () => console.log(`Ice cream is served`));
+  });
 
 /* let order = (Flavor_name, call_production) => {
   setTimeout(() => {
