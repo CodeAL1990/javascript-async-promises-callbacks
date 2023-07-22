@@ -6,9 +6,35 @@ const menu = {
 
 let is_shop_open = true;
 
-let order = (time, work) => {
+// Promise chain layout
+/* let order = () => {
+  return new Promise(() => {
+    if (true) {
+      resolve();
+    } else {
+      reject();
+    }
+  });
+};
+
+order().then().then().then().catch().finally(); */
+
+async function order() {
+  try {
+    await abc;
+  } catch (error) {
+    console.log("abc does not exist", error);
+  } finally {
+    console.log("Code runs either way");
+  }
+}
+
+order();
+
+// Promise chain
+/* let order = (time, work) => {
   return new Promise((resolve, reject) => {
-    if (is_shop_open === true) {
+    if (is_shop_open) {
       setTimeout(() => {
         resolve(work());
       }, time);
@@ -53,8 +79,17 @@ order(2000, () => console.log(`Flavor ${menu.Flavor[0]} was selected`))
 
   .then(() => {
     return order(1000, () => console.log(`Ice cream is served`));
-  });
+  })
 
+  .catch(() => {
+    console.log("Shop is closed, unable to serve");
+  })
+
+  .finally(() => {
+    console.log("Shop is closed, please return tomorrow");
+  }); */
+
+// callback chain
 /* let order = (Flavor_name, call_production) => {
   setTimeout(() => {
     console.log(`Flavor ${menu.Flavor[Flavor_name]} was selected`);

@@ -19,4 +19,8 @@ For all the steps till your final product, instead of the multitude of callbacks
 To do this, you will use call then on your order call for each step you need to reach final product
 Inside each subsequent then call, you will use an arrow function and return the order call for the next step you have determined when you did the callback version
 Check out the full scope of the code for your callback version and the promise chaining version, one should be more readable then the other(albeit longer)
-\*\* Personally, the advantage i can see for promise chaining is that you are less likely to make mistakes compared to callback chaining
+\*\* Personally, the advantage i can see for promise chaining is that you are less likely to make mistakes while writing compared to callback chaining(and later Async/await will be introduced to showcase why it is better presumably)
+At the end of the .then chains you can place a .catch call which will 'catch' errors in the function(For example, if is_shop_open is false, catch will run whatever code is inside it)
+Lastly, there is a .finally call at the end of the code chain which will run regardless if the final .then runs, or catch runs, signifying the end of the code chain
+Remove/comment the promise chain as we head into async/await
+Inside an async function, you will have .try, .catch, and .finally calls
