@@ -24,3 +24,19 @@ At the end of the .then chains you can place a .catch call which will 'catch' er
 Lastly, there is a .finally call at the end of the code chain which will run regardless if the final .then runs, or catch runs, signifying the end of the code chain
 Remove/comment the promise chain as we head into async/await
 Inside an async function, you will have .try, .catch, and .finally calls
+await in an async function will not allow the rest of the code inside the function to run till it is completed(The code outside the function will still run first while the await function 'waits')
+After understanding the above, keeping the menu/stocks object and is_shop_open variable, we will now write a process in which the ice cream store will operate
+We will have time function, passing in milliseconds, returning an instance of Promise with resolve and reject
+Inside that Promise, if is_shop_open is true, we will setTimeout, passing in resolve and milliseconds reference
+Else, we will reject with a shop is closed message
+Then, we will have a kitchen async function with try, catch(error), finally
+For catch, write a customer left console log
+For finally, write a day ended, shop is closed console log
+Remember that list of steps you curated? We will now apply them in the try method
+Each step inside the try method will have a timer which you have established in the time function where it will resolve whenever you have milliseconds inputted
+For your first step, console log the desired message and write await time(), passing in the set amount of time you want the first step to be completed
+Call kitchen to run the function
+Test it in your console and you should see the message in the console and the message in your finally method appear at the end
+Once the above works, write the rest of your steps using await and console logs
+Set is_shop_open to false to test catch(error)
+All of the above should bring your async, await, and promises understanding to a much higher level(callbacks maybe not)
